@@ -31,3 +31,6 @@
 [submodule "bundle/vim-pathogen"]
 	path = bundle/vim-pathogen
 	url = https://github.com/tpope/vim-pathogen
+[submodule "bundle/vim-godebug"]
+	path = bundle/vim-godebug
+	url = https://github.com/jodosha/vim-godebug.git
