@@ -5,7 +5,7 @@ This is the my personal local vim plugin setup I use.
 - And some highlight is enabled using the Solarized theme.
 - Also line numbers are enabled.
 - The plugins I am using are:
-- - YouCompleteMe
+  - YouCompleteMe
   - delimitMate
   - syntastic
   - tabular
