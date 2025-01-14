@@ -1,4 +1,4 @@
-This is the my personal local vim plugin setup I use. 
+This is the my personal local vim plugin setup. 
 
 - Disabled the Vim backup file.
 - Autoindent with 2 spaces per tab.
