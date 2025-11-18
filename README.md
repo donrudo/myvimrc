@@ -45,3 +45,29 @@ This setup includes **vim-ai** plugin for interacting with Claude AI directly fr
 - `:AI /write-tests` - Generate tests for selected code (visual mode)
 
 See `ai-roles.ini` for more custom roles and configuration options.
+
+## Plugin Management
+
+All plugins are managed as git submodules. To update all plugins to their latest versions:
+
+```bash
+git submodule update --remote --merge
+```
+
+### Recent Updates
+
+The following plugins have been updated to their latest versions:
+
+- **YouCompleteMe** - Latest master with improved hierarchy support and bug fixes
+- **delimitMate** - v2.7+ with improved auto-pairing behavior
+- **tabular** - v1.0.0+ with enhanced table formatting
+- **tagbar** - v3.1.1+ with Universal Ctags support improvements
+- **vim-go** - v1.29+ with debugging improvements and documentation updates
+- **vim-puppet** - v1.0.0+ with enhanced EPP template support and Lua integration
+
+Already at latest versions:
+- syntastic (v3.10.0)
+- vim-ai (v2.1.0+)
+- vim-colors-solarized
+- vim-colorschemes
+- vim-pathogen (v2.4)
