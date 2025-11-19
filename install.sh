@@ -44,8 +44,9 @@ git submodule update --init --recursive
 ln -s ${DIR}/bundle/vim-pathogen/autoload ${DIR}/autoload
 
 echo Compiling YouCompleteMe submodule
+echo ... this may take a while. Using --go-completer for Go support
 cd ${DIR}/bundle/YouCompleteMe
-./install.py --system-boost --gocode-completer
+./install.py --go-completer
 
 
 echo All set, you should be good to go now!
