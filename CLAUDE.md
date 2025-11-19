@@ -1,10 +1,82 @@
-# Claude AI Integration Guide
+# Claude Assistant Guide for Vim Configuration
 
 This document describes how Claude AI can assist with managing and improving this Vim configuration repository.
+
+## Context
+This is a personal vim configuration repository that provides a complete development environment with modern IDE-like features through carefully selected plugins.
 
 ## Overview
 
 Claude can help you with various aspects of maintaining and customizing your Vim setup, from understanding plugin configurations to adding new features and troubleshooting issues.
+
+## Quick Reference
+
+### Repository Structure
+- **Main config**: `.vimrc` - Contains all vim settings and plugin configurations
+- **Plugins**: `bundle/` directory - Git submodules for each plugin
+- **Setup**: `install.sh` - Automated installation script
+- **Management**: Uses Pathogen for plugin loading
+
+### Common Tasks
+
+#### Adding a New Plugin
+```bash
+# Add as git submodule
+git submodule add <plugin-repo-url> bundle/<plugin-name>
+
+# Update .gitmodules and commit
+git add .gitmodules bundle/<plugin-name>
+git commit -m "Add <plugin-name> plugin"
+```
+
+#### Updating Plugins
+```bash
+# Update all submodules
+git submodule foreach git pull origin master
+
+# Or update specific plugin
+cd bundle/<plugin-name> && git pull origin master
+```
+
+#### Configuration Changes
+- Edit `.vimrc` for vim settings
+- Plugin-specific configs are in `.vimrc` (see syntastic and go settings)
+- Color scheme is set to desertEx with custom line number highlighting
+
+### Plugin Functionality
+
+| Plugin | Purpose | Key Features |
+|--------|---------|--------------|
+| YouCompleteMe | Code completion | Auto-complete, Go support |
+| syntastic | Syntax checking | Real-time error detection |
+| vim-go | Go development | Go-specific features |
+| tagbar | Code navigation | Function/class browser (F8) |
+| delimitMate | Auto-pairing | Automatic bracket/quote closing |
+
+### Troubleshooting
+
+#### YouCompleteMe Issues
+```bash
+# Recompile with dependencies
+cd bundle/YouCompleteMe
+./install.py --system-boost --gocode-completer
+```
+
+#### Missing Dependencies
+- Ensure cmake and python are installed
+- Check git submodules are initialized: `git submodule status`
+
+### Development Workflow
+1. Use `F8` to toggle Tagbar for code navigation
+2. Syntastic provides real-time syntax checking
+3. YouCompleteMe offers intelligent autocompletion
+4. Go development enhanced with vim-go plugin
+
+### Customization Notes
+- 2-space indentation configured
+- No backup/swap files to keep workspace clean  
+- Line numbers and cursor highlighting enabled
+- Status line shows syntastic warnings/errors
 
 ## Common Use Cases
 
