@@ -6,6 +6,77 @@ This document describes AI agent workflows and automation patterns for maintaini
 
 AI agents can automate various maintenance tasks for your Vim setup, from keeping plugins updated to ensuring configuration consistency across different environments.
 
+## Project Context
+
+### Project Overview
+Personal vim configuration setup using Pathogen for plugin management. Includes syntax checking, Go language support, autocompletion, and various productivity plugins.
+
+### Project Structure
+```
+/home/carlosm/.vim/
+├── autoload/          # Pathogen autoload files (symlinked)
+├── bundle/            # Vim plugins managed as git submodules
+├── .vimrc            # Main vim configuration file
+├── install.sh        # Setup script for installation
+└── README.md         # Project documentation
+```
+
+### Key Commands
+
+#### Installation & Setup
+```bash
+# Install the vim configuration (from project directory)
+./install.sh
+
+# Update git submodules (plugins)
+git submodule update --init --recursive
+
+# Compile YouCompleteMe (manual if needed)
+cd bundle/YouCompleteMe && ./install.py --system-boost --gocode-completer
+```
+
+#### Vim Usage
+- `F8` - Toggle Tagbar (file structure viewer)
+- Standard vim commands apply
+
+### Dependencies
+- cmake (required for YouCompleteMe)
+- python (required for YouCompleteMe)
+- git (for submodule management)
+
+### Installed Plugins
+1. **YouCompleteMe** - Code completion engine
+2. **delimitMate** - Automatic closing of quotes, parenthesis, etc.
+3. **syntastic** - Syntax checking
+4. **tabular** - Text alignment
+5. **tagbar** - Code structure viewer
+6. **vim-colors-solarized** - Solarized color scheme
+7. **vim-colorschemes** - Additional color schemes
+8. **vim-go** - Go language support
+9. **vim-pathogen** - Plugin manager
+10. **vim-puppet** - Puppet syntax support
+
+### Configuration Highlights
+- 2-space indentation
+- Line numbers enabled
+- Cursor line highlighting
+- No backup/swap files
+- Syntax highlighting with desertEx theme
+- Go language syntax highlighting
+- Syntastic integration for status line
+
+### File Locations
+- Vim config: `~/.vimrc` (symlinked to `.vimrc`)
+- Plugin directory: `~/.vim/bundle/`
+- This repository should be cloned to `~/.vim/`
+
+### Notes for AI Assistants
+- All plugins are managed as git submodules in the `bundle/` directory
+- The main configuration is in `.vimrc`
+- Installation requires cmake and python for YouCompleteMe compilation
+- Theme uses desertEx with custom highlighting for line numbers and cursor
+- Go development is specifically supported with vim-go plugin
+
 ## Automated Workflows
 
 ### 1. Plugin Update Agent
